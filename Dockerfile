@@ -1,2 +1,2 @@
-from nginex:1.19-alpine
-add index.html /usr/share/nginex/html
+from nginx:1.19-alpine
+add index.html /usr/share/nginx/html
