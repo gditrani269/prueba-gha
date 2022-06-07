@@ -1,4 +1,5 @@
-from nginx:1.19-alpine
-WORKDIR /usr/src/app
-add index.html /usr/src/app
+FROM nginx:mainline-alpine
+RUN rm /etc/nginx/conf.d/*
+ADD helloworld.conf /etc/nginx/conf.d/
+ADD index.html /usr/share/nginx/html/
 CMD ["nginx", "-g", "daemon off;"]
