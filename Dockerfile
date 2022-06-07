@@ -1,3 +1,4 @@
 from nginx:1.19-alpine
-add index.html /usr/share/nginx/html
+WORKDIR /usr/src/app
+add index.html /usr/src/app
 CMD ["nginx", "-g", "daemon off;"]
