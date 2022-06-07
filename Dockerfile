@@ -1,3 +1,3 @@
 from nginx:1.19-alpine
-USER root
 add index.html /usr/share/nginx/html
+CMD ["/usr/libexec/s2i/run"]
