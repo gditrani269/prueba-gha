@@ -8,6 +8,6 @@ WORKDIR /code
 RUN chown -R nginx:nginx /var/cache/nginx /etc/nginx/
 
 # switch to non-root user
-USER nginx
+USER root
 
 CMD ["nginx", "-g", "daemon off;"]
