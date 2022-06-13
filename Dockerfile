@@ -3,4 +3,11 @@ FROM nginx:1.17
 add index.html /usr/share/nginx/html
 add index2.html /usr/src/app/
 WORKDIR /code
+
+# set file permissions for nginx user
+RUN chown -R nginx:nginx /var/cache/nginx /etc/nginx/
+
+# switch to non-root user
+USER nginx
+
 CMD ["nginx", "-g", "daemon off;"]
