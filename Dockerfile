@@ -4,10 +4,8 @@ add index.html /usr/share/nginx/html
 add index2.html /usr/src/app/
 # WORKDIR /code
 
-# set file permissions for nginx user
-# RUN chown -R nginx:nginx /var/cache/nginx /etc/nginx/
-
-# switch to non-root user
-USER root
+RUN  touch /var/run/nginx.pid && \
+     chown -R nginx:nginx /var/cache/nginx /var/run/nginx.pid
+USER nginx
 
 CMD ["nginx", "-g", "daemon off;"]
